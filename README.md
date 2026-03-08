@@ -1,3 +1,23 @@
+# Nuxt SSR Hello World Recipe App
+
+<!-- #ZEROPS_EXTRACT_START:intro# -->
+A server-rendered [Nuxt](https://nuxt.com) application powered by Nitro, connected to a PostgreSQL database. Demonstrates idempotent migrations, real database connectivity checks, and SSR health reporting — all deployed on [Zerops](https://zerops.io).
+<!-- #ZEROPS_EXTRACT_END:intro# -->
+
+Used within [Nuxt SSR Hello World recipe](https://app.zerops.io/recipes/nuxt-ssr-hello-world) for [Zerops](https://zerops.io) platform.
+
+⬇️ **Full recipe page and deploy with one-click**
+
+[![Deploy on Zerops](https://github.com/zeropsio/recipe-shared-assets/blob/main/deploy-button/light/deploy-button.svg)](https://app.zerops.io/recipes/nuxt-ssr-hello-world?environment=small-production)
+
+![nuxt cover](https://github.com/zeropsio/recipe-shared-assets/blob/main/covers/svg/cover-nuxt.svg)
+
+## Integration Guide
+
+### 1. Adding `zerops.yaml`
+The main application configuration file you place at the root of your repository, it tells Zerops how to build, deploy and run your application.
+
+```yaml
 zerops:
   # Production setup: Nitro bundles all deps into .output/ —
   # no node_modules needed at runtime. Full optimized SSR.
@@ -93,3 +113,4 @@ zerops:
       # zsc noop: keeps the container idle. Developer starts
       # the dev server manually via SSH: npm run dev
       start: zsc noop --silent
+```
