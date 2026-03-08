@@ -5,31 +5,35 @@ import pg from 'pg'
 
 const { Pool } = pg
 
-const pool = new Pool({
-  host: process.env.DB_HOST,
-  port: Number(process.env.DB_PORT) || 5432,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  database: process.env.DB_NAME,
-})
+// Async IIFE — required for CJS bundle compatibility
+// (top-level await is not supported in CJS output format).
+;(async () => {
+  const pool = new Pool({
+    host: process.env.DB_HOST,
+    port: Number(process.env.DB_PORT) || 5432,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME,
+  })
 
-const client = await pool.connect()
-try {
-  await client.query(`
-    CREATE TABLE IF NOT EXISTS greetings (
-      id      INTEGER PRIMARY KEY,
-      message TEXT    NOT NULL
-    );
-  `)
+  const client = await pool.connect()
+  try {
+    await client.query(`
+      CREATE TABLE IF NOT EXISTS greetings (
+        id      INTEGER PRIMARY KEY,
+        message TEXT    NOT NULL
+      );
+    `)
 
-  await client.query(`
-    INSERT INTO greetings (id, message)
-    VALUES (1, 'Hello from Zerops!')
-    ON CONFLICT (id) DO NOTHING;
-  `)
+    await client.query(`
+      INSERT INTO greetings (id, message)
+      VALUES (1, 'Hello from Zerops!')
+      ON CONFLICT (id) DO NOTHING;
+    `)
 
-  console.log('Migration complete.')
-} finally {
-  client.release()
-  await pool.end()
-}
+    console.log('Migration complete.')
+  } finally {
+    client.release()
+    await pool.end()
+  }
+})()
