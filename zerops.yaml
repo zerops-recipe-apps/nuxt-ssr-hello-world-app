@@ -5,13 +5,13 @@ zerops:
     build:
       base: nodejs@22
       buildCommands:
-        # npm install (not npm ci): Nuxt 3.x peer deps cause
-        # npm ci to fail with peer conflict errors.
+        # npm install (not ci) — Nuxt 4's transitive deps have
+        # a known peer-dep conflict that npm ci rejects.
         - npm install
         # Bundle pg into migrate.cjs before Nuxt build —
         # Nitro inlines pg, leaving none for migrate.js.
         - node scripts/bundle-migrate.mjs
-        - npx nuxi build
+        - npm run build
 
       deployFiles:
         # Nitro bundles all runtime deps into .output/ —

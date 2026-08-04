@@ -1,8 +1,22 @@
 {
-  "name": "nuxt-ssr-hello-world",
+  "name": "nuxt-ssr-hello-world-app",
   "version": "1.0.0",
+  "description": "Nuxt SSR app with PostgreSQL on Zerops nodejs@22",
+  "author": "Zerops",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zerops-recipe-apps/nuxt-ssr-hello-world-app"
+  },
+  "homepage": "https://github.com/zerops-recipe-apps/nuxt-ssr-hello-world-app",
+  "bugs": {
+    "url": "https://github.com/zerops-recipe-apps/nuxt-ssr-hello-world-app/issues"
+  },
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -10,11 +24,25 @@
     "preview": "node .output/server/index.mjs"
   },
   "dependencies": {
-    "pg": "^8.14.1"
+    "nuxt": "4.5.1",
+    "pg": "8.22.0"
   },
   "devDependencies": {
-    "esbuild": "^0.25.0",
-    "nuxt": "^3.16.0",
-    "@types/pg": "^8.11.11"
+    "@types/node": "26.1.1",
+    "@types/pg": "8.20.0",
+    "esbuild": "0.25.12"
+  },
+  "keywords": [
+    "nuxt",
+    "zerops",
+    "ssr",
+    "nitro",
+    "postgresql"
+  ],
+  "overrides": {
+    "brace-expansion": "2.1.4",
+    "minimatch@10": {
+      "brace-expansion": "5.0.9"
+    }
   }
 }

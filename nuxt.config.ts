@@ -6,6 +6,12 @@ const pkg = JSON.parse(readFileSync('./node_modules/nuxt/package.json', 'utf-8')
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
 
+  app: {
+    head: {
+      link: [{ rel: 'icon', href: '/favicon.ico' }],
+    },
+  },
+
   // Disable file-based pages routing - health check is
   // served exclusively from the Nitro server route.
   pages: false,
