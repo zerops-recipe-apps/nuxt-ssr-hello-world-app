@@ -1,7 +1,7 @@
 {
   "name": "nuxt-ssr-hello-world-app",
   "version": "1.0.0",
-  "description": "Nuxt SSR app with PostgreSQL on Zerops nodejs@22",
+  "description": "Nuxt SSR app with PostgreSQL on Zerops nodejs@24",
   "author": "Zerops",
   "license": "MIT",
   "repository": {
@@ -15,7 +15,7 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">=22.0.0"
+    "node": ">=24.0.0"
   },
   "scripts": {
     "build": "nuxt build",
