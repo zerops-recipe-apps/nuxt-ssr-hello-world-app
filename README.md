@@ -23,7 +23,7 @@ zerops:
   # no node_modules needed at runtime. Full optimized SSR.
   - setup: prod
     build:
-      base: nodejs@22
+      base: nodejs@24
       buildCommands:
         # npm install (not npm ci): Nuxt 3.x peer deps cause
         # npm ci to fail with peer conflict errors.
@@ -55,7 +55,7 @@ zerops:
           path: /
 
     run:
-      base: nodejs@22
+      base: nodejs@24
       # initCommands run before start on every container
       # creation — deploy, restart, or scale-up event.
       # zsc execOnce ensures migration runs exactly once
@@ -82,7 +82,7 @@ zerops:
   # Developer SSHs in and drives the framework dev server.
   - setup: dev
     build:
-      base: nodejs@22
+      base: nodejs@24
       os: ubuntu
       buildCommands:
         # npm install (not npm ci) — dev may lack a lock file.
@@ -93,7 +93,7 @@ zerops:
         - node_modules
 
     run:
-      base: nodejs@22
+      base: nodejs@24
       os: ubuntu
       # Migration runs even in dev so the DB schema is ready
       # when the developer SSHs in. Uses migrate.js directly

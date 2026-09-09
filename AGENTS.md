@@ -1,12 +1,12 @@
 # nuxt-ssr-hello-world-app
 
-Nuxt 4 SSR app (Nitro node preset) connected to PostgreSQL on Zerops nodejs@22, with a pre-bundled migration script.
+Nuxt 4 SSR app (Nitro node preset) connected to PostgreSQL on Zerops nodejs@24, with a pre-bundled migration script.
 
 ## Zerops service facts
 
 - HTTP port: `3000`
 - Siblings: `db` (PostgreSQL) — env: `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASS`, `DB_NAME`
-- Runtime base: `nodejs@22`
+- Runtime base: `nodejs@24`
 
 ## Zerops dev
 
