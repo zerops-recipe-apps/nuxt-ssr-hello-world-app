@@ -24,7 +24,7 @@
     "preview": "node .output/server/index.mjs"
   },
   "dependencies": {
-    "nuxt": "4.5.1",
+    "nuxt": "4.6.1",
     "pg": "8.22.0"
   },
   "devDependencies": {
